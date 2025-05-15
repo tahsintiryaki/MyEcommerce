@@ -15,6 +15,7 @@ public static class ServiceRegistration
             options.UseNpgsql(configuration.GetConnectionString("Default")));
 
         serviceCollection.AddScoped<IOrderRepository, OrderRepository>();
+        serviceCollection.AddScoped<IOrderDetailsRepository, OrderDetailsRepository>();
      
     }
 }

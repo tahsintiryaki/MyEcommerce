@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "MyEcommerce.SharedLibrary";
+
+package product;
+
+service ProductChecker {
+  rpc CheckProducts (ProductsRequest) returns (ProductsResponse);
+}
+
+message ProductsRequest {
+  repeated string productIds = 1;
+}
+
+message ProductsResponse {
+  repeated string productIds = 1; // sadece ürün id'leri listesi
+}

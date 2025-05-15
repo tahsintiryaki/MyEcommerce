@@ -7,12 +7,22 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="Google.Protobuf" Version="3.30.2" />
+      <PackageReference Include="Grpc.AspNetCore" Version="2.71.0" />
+      <PackageReference Include="Grpc.Tools" Version="2.71.0">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
       <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\MyEcommerce.Cache\MyEcommerce.Cache.csproj" />
       <ProjectReference Include="..\MyEcommerce.Product.Application\MyEcommerce.Product.Application.csproj" />
+      
     </ItemGroup>
-
+    <ItemGroup>
+        <Protobuf Include="..\MyEcommerce.SharedLibrary\Protos/product.proto" GrpcServices="Server" />
+    </ItemGroup>
 </Project>
+   

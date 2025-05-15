@@ -9,5 +9,5 @@ public class Orders : FullAuditedEntity
     public OrderStatusEnums OrderStatus { get; set; }
     
     
-    public ICollection<OrderDetails> OrderDetails { get; set; }
+    public List<OrderDetails> OrderDetails { get; set; }
 }

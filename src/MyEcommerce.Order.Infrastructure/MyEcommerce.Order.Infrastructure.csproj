@@ -7,6 +7,13 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="Google.Protobuf" Version="3.30.2" />
+      <PackageReference Include="Grpc.Net.Client" Version="2.71.0" />
+      <PackageReference Include="Grpc.Net.ClientFactory" Version="2.71.0" />
+      <PackageReference Include="Grpc.Tools" Version="2.71.0">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
       <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.4" />
     </ItemGroup>
 
@@ -15,6 +22,9 @@
       <ProjectReference Include="..\MyEcommerce.Order.Application\MyEcommerce.Order.Application.csproj" />
       <ProjectReference Include="..\MyEcommerce.Order.Persistence\MyEcommerce.Order.Persistence.csproj" />
       <ProjectReference Include="..\MyEcommerce.SharedLibrary\MyEcommerce.SharedLibrary.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <Protobuf Include="..\MyEcommerce.SharedLibrary\Protos/product.proto" GrpcServices="Client" />
     </ItemGroup>
 
 </Project>
