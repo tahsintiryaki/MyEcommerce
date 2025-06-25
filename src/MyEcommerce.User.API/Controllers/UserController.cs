@@ -17,14 +17,14 @@ namespace MyEcommerce.User.API.Controllers
             _userService = userService;
         }
 
-        [HttpPost]
+        [HttpPost("create-user")]
         public async Task<IActionResult> CreateUser(CreateUserDto createUserDto)
         {
             await _userService.CreateUser(createUserDto);
             return Ok();
         }
 
-        [HttpGet]
+        [HttpGet("get-users")]
         public async Task<IActionResult> GetUsers()
         {
             var response = await _userService.GetAllUsers();

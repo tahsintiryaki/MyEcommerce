@@ -16,15 +16,15 @@ namespace MyEcommerce.Product.API.Controllers
             _productService = productService;
         }
 
-        [HttpPost]
+        [HttpPost("create-product")]
         public async Task<IActionResult> CreateProduct(CreateProductDto request)
         {
             var response = await _productService.CreateProduct(request);
             return Ok(response);
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetProductList()
+        [HttpGet("get-products")]
+        public async Task<IActionResult> GetProducts()
         {
             var response = await _productService.GetProducts();
             return Ok(response);
